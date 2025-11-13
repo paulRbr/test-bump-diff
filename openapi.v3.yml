@@ -820,11 +820,6 @@ components:
               items:
                 type: string
               example: [verb, path]
-        children:
-          type: array
-          description: A list of children item changes
-          items:
-            $ref: "#/components/schemas/DiffItem"
     DiffForApi:
       allOf:
         - $ref: "#/components/schemas/Diff"
