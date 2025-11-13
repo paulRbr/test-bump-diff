@@ -15,3 +15,5 @@ actions:
     update:
       description: |
         This is in english
+  - target: '$.components.schemas.Hub.properties.name'
+    remove: true
