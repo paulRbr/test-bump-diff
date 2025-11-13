@@ -13,8 +13,6 @@ info:
 
     Our [webhook](#webhook-documentation-change) also lets you get
     notifications every time a change is introduced in your API.
-
-    Hi!
   version: "1.0"
 servers:
   - url: https://bump.sh/api/v1
