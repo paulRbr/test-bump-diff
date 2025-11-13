@@ -1,0 +1,23 @@
+name: Api diff with Bump.sh
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  api-diff:
+    # Run only for PRs not draft
+    if: ${{ github.event_name == 'pull_request' && !github.event.pull_request.draft }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Diff API documentation
+        uses: bump-sh/github-action@v1
+        with:
+          doc: bump
+          token: ${{secrets.BUMP_TOKEN}}
+          file: openapi.v3.yml
+          overlay: overlay.en.yml
+          command: diff
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
